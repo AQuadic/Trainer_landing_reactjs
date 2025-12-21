@@ -1,9 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutlet, useLocation } from "react-router";
 import { useEffect } from "react";
-import Header from "./Header";
+import Header from "./header/Header";
 import Footer from "./Footer";
-
 
 const Layout = () => {
   const outlet = useOutlet();
