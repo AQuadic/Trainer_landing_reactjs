@@ -43,7 +43,7 @@ const Header = () => {
       }`}
     >
       <Link to="/" aria-label="Home" className="relative inline-block">
-        <span className="relative block w-[150px] h-[40px]">
+        <span className="relative block w-37.5 h-10">
           <img
             src="/logo_white.svg"
             alt="Logo white"
