@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+import BackArrow from "../icons/pricing/BackArrow"
 import Basic from "../icons/pricing/Basic"
 import BlueCheck from "../icons/pricing/BlueCheck"
 import NavyCheck from "../icons/pricing/NavyCheck"
@@ -5,7 +7,12 @@ import Unlimited from "../icons/pricing/Unlimited"
 
 const PricingCards = () => {
     return (
-        <section className="container md:my-24 my-8">
+        <section className="container md:my-24 my-28">
+            <Link to='/' className="md:hidden flex items-center gap-21.75 mb-6">
+                <BackArrow />
+                <p className="text-[#0F0F0F] text-xl font-semibold">Pricing</p>
+            </Link>
+
             <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center">
                 Fitness Plans to Match Every Goal
             </h2>
