@@ -1,4 +1,5 @@
 import PricingCards from "@/components/pricing/PricingCards"
+import PricingContact from "@/components/pricing/PricingContact"
 import PricingFeatures from "@/components/pricing/PricingFeatures"
 
 const PricingPage = () => {
@@ -6,6 +7,7 @@ const PricingPage = () => {
         <div>
             <PricingCards />
             <PricingFeatures />
+            <PricingContact />
         </div>
     )
 }
