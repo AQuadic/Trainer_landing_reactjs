@@ -3,6 +3,7 @@ import HomeFeatures from "../components/home/HomeFeatures";
 import HomeMembership from "@/components/home/HomeMembership";
 import BlogContact from "@/components/blog/BlogContact";
 import HomePefetcFor from "@/components/icons/home/HomePefetcFor";
+import HomeTestimonials from "@/components/home/HomeTestimonials";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <HomeFeatures />
       <HomeMembership />
       <HomePefetcFor />
+      <HomeTestimonials />
       <BlogContact />
     </div>
   );

@@ -56,7 +56,7 @@ const HomeFeatures = () => {
                         : "bg-transparent"
                     }`}
             >
-              <div className="md:w-39 w-24 md:h-39 h-24 bg-[#F3F7FC] rounded-[20px] flex flex-col items-center justify-center md:gap-4 gap-3">
+              <div className="md:w-39 w-24 md:h-39 h-24 bg-[#F3F7FC] rounded-4xl flex flex-col items-center justify-center md:gap-4 gap-3">
                 <item.icon />
                 <p className="text-[#001B3F] md:text-base text-[10px] font-semibold text-center">
                   {item.text}
