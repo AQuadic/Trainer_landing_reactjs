@@ -2,7 +2,7 @@ const FeaturesManagementHeader = () => {
     return (
         <section className="container md:pb-22 pt-44 flex md:flex-row flex-col-reverse items-center justify-between gap-6">
             <div>
-                <h2 className="text-[#001B3F] md:text-[40px] text-base font-semibold text-center md:text-start">
+                <h2 className="md:w-96 text-[#001B3F] md:text-[40px] text-base font-semibold text-center md:text-start">
                     Effortless Scheduling Management
                 </h2>
 
