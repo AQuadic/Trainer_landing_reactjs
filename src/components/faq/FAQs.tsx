@@ -5,10 +5,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "..
 
 const faqsData = [
   { id: "item-1", question: "Is there a free trial?", answer: "Yes. It adheres to the WAI-ARIA design pattern." },
-  { id: "item-2", question: "How do I cancel my subscription?", answer: "You can cancel anytime from your account settings." },
-  { id: "item-3", question: "Do you offer support?", answer: "Yes, our team is available 24/7 for assistance." },
-  { id: "item-4", question: "Can I upgrade my plan?", answer: "Absolutely. You can upgrade directly from your dashboard." },
-  { id: "item-5", question: "Are there any hidden fees?", answer: "No. We believe in transparent pricing." },
+  { id: "item-2", question: "Are all features available in every plan?", answer: "Yes. It adheres to the WAI-ARIA design pattern." },
+  { id: "item-3", question: "Can I switch between plans later?", answer: "Yes. It adheres to the WAI-ARIA design pattern." },
+  { id: "item-4", question: "Do you provide training for my team?", answer: "Yes. It adheres to the WAI-ARIA design pattern." },
+  { id: "item-5", question: "Can I access the system from any device?", answer: "Yes. It adheres to the WAI-ARIA design pattern." },
 ];
 
 const FAQs = () => {
