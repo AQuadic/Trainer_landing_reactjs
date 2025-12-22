@@ -15,12 +15,12 @@ const FAQs = () => {
   const [openItem, setOpenItem] = useState<string | null>(null);
 
   return (
-    <section className="container py-32">
-      <h2 className="text-[#001B3F] text-[32px] font-semibold text-center">
+    <section className="container pt-32 pb-17">
+      <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold text-center">
         Frequently Asked Questions
       </h2>
 
-      <p className="text-[#565555] text-lg font-medium leading-[150%] mt-6 text-center">
+      <p className="text-[#565555] md:text-lg text-sm font-medium leading-[150%] md:mt-6 mt-3 text-center">
         Find answers to the most common questions about our services and features. This guide helps you get the information you need <br /> quickly and easily.
       </p>
 
@@ -37,8 +37,8 @@ const FAQs = () => {
                 }`}
               >
                 <AccordionTrigger className="flex justify-between items-center">
-                  <p className="text-[#0F0F0F] text-2xl font-semibold leading-[100%]">
-                    <span className="text-[32px] mr-4">{`0${index + 1}`}</span>
+                  <p className="text-[#0F0F0F] md:text-2xl text-sm font-semibold leading-[100%]">
+                    <span className="md:text-[32px] text-base mr-4">{`0${index + 1}`}</span>
                     {faq.question}
                   </p>
                   <span className="text-3xl font-bold">{isOpen ? "-" : "+"}</span>
