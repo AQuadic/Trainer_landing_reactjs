@@ -5,6 +5,14 @@ import { Link, useLocation } from "react-router-dom";
 import ChangeLanguage from "./ChangeLanguage";
 import RequestDemo from "./RequestDemo";
 import { useEffect, useState } from "react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import HeaderScheduling from "@/components/icons/general/HeaderScheduling";
+import HeaderBookings from "@/components/icons/general/HeaderBookings";
+import OnlinePayments from "@/components/icons/general/OnlinePayments";
+import HeaderAnalytics from "@/components/icons/general/HeaderAnalytics";
+import YourOwnApp from "@/components/icons/general/YourOwnApp";
+import HomeGateways from "@/components/icons/general/HomeGateways";
+import HeaderManagement from "@/components/icons/general/HeaderManagement";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -61,18 +69,91 @@ const Header = () => {
         </span>
       </Link>
 
-      <nav>
-        {NavLinks.map((link) => (
-          <Link
-            key={link.path}
-            to={link.path}
-            className={`mx-4 transition-colors duration-300 ease-in-out ${
-              isHomeInTop90 ? "text-white" : "text-foreground"
-            }`}
-          >
-            {link.nameEn}
-          </Link>
-        ))}
+      <nav className="flex items-center">
+        {NavLinks.map((link) => {
+          if (link.path === "/features") {
+            return (
+              <DropdownMenu key={link.path}>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    className={`mx-4 transition-colors duration-300 ease-in-out ${
+                      isHomeInTop90 ? "text-white" : "text-foreground"
+                    }`}
+                  >
+                    {link.nameEn}
+                  </button>
+                </DropdownMenuTrigger>
+
+                <DropdownMenuContent
+                  align="start"
+                  className="w-48 mt-2 rounded-4xl"
+                >
+                  <DropdownMenuItem asChild>
+                    <Link to="/features/management">
+                    <HeaderManagement />
+                      Management
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem asChild>
+                    <Link to="/features/scheduling">
+                      <HeaderScheduling />
+                      Scheduling
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem asChild>
+                    <Link to="/features/bookings">
+                      <HeaderBookings />
+                      Bookings
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem asChild>
+                    <Link to="/features/online_payments">
+                      <OnlinePayments />
+                      Online Payments
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem asChild>
+                    <Link to="/features/analytics">
+                      <HeaderAnalytics />
+                      Analytics
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem asChild>
+                    <Link to="/features/your_own_app">
+                      <YourOwnApp />
+                      Your Own App
+                    </Link>
+                  </DropdownMenuItem>
+
+                  <DropdownMenuItem asChild>
+                    <Link to="/features/gateways">
+                      <HomeGateways />
+                      Gateways
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            );
+          }
+
+          // ✅ NORMAL LINKS
+          return (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`mx-4 transition-colors duration-300 ease-in-out ${
+                isHomeInTop90 ? "text-white" : "text-foreground"
+              }`}
+            >
+              {link.nameEn}
+            </Link>
+          );
+        })}
       </nav>
 
       <div className="flex items-center gap-6">
