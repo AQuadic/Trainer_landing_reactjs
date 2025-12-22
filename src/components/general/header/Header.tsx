@@ -60,7 +60,7 @@ const Header = () => {
             }`}
           />
           <img
-            src="/logo_blue.svg"
+            src="/footerLogo.svg"
             alt="Logo blue"
             className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
               isHomeInTop90 ? "opacity-0" : "opacity-100"

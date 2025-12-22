@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="my-14.25 grid md:grid-cols-4 justify-between">
                 <div className="">
                     <img 
-                        src="/footer_logo.svg"
+                        src="/footerLogo.svg"
                         alt="footer logo"
                         className="mx-auto md:mx-0"
                     />
