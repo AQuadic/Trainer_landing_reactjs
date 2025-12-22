@@ -7,6 +7,7 @@ import FAQPage from "./pages/FAQPage";
 import FeaturesManagement from "./pages/features/FeaturesManagement";
 import FeaturesScheduling from "./pages/features/FeaturesScheduling";
 import YourOwnApp from "./pages/features/YourOwnApp";
+import BusinessTypePage from "./pages/business/BusinessTypePage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="features/management" element={<FeaturesManagement />} />
           <Route path="features/scheduling" element={<FeaturesScheduling />} />
           <Route path="features/your_own_app" element={<YourOwnApp />} />
+          <Route path="/business-type" element={<BusinessTypePage />} />
           <Route path="about" element={<div>About Page</div>} />
         </Route>
       </Routes>
