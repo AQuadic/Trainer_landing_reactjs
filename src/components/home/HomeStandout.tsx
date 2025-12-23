@@ -45,6 +45,7 @@ const HomeStandout = () => {
         <Accordion
             type="single"
             collapsible
+            defaultValue="item-1"
             className="
             flex flex-col gap-4 mt-6
             md:flex-row md:flex-wrap md:gap-6 md:justify-center md:mt-14
@@ -85,7 +86,7 @@ const HomeStandout = () => {
                     <span
                         className="
                         hidden md:flex
-                        h-121.5 items-center justify-center
+                        items-center justify-center
                         vertical-text font-semibold text-[32px] text-[#001B3F]
                         transition-all duration-300
                         group-data-[state=open]:opacity-0
@@ -102,7 +103,7 @@ const HomeStandout = () => {
                         opacity-0 translate-y-2
                         transition-all duration-300 delay-150
                         group-data-[state=open]:opacity-100
-                        group-data-[state=open]:translate-y-0
+                        group-data-[state=open]:translate-y-0 
                         "
                     >
                         {card.title}
