@@ -1,6 +1,13 @@
+import { Link } from "react-router-dom";
+import BackArrow from "../icons/pricing/BackArrow";
+
 const BusinessTypeHeader = () => {
     return (
-        <section className="relative md:pb-24 pt-24 gap-6 overflow-hidden">
+        <section className="relative md:pb-24 md:pt-24 pt-16 gap-6 overflow-hidden">
+        <Link to='/' className="md:hidden flex items-center gap-13.25 mb-6 relative z-99 px-8">
+            <BackArrow />
+            <p className="text-[#0F0F0F] text-xl font-semibold">Sports Academies</p>
+        </Link>
         <div className="container flex md:flex-row flex-col-reverse items-center justify-between">
             <div className="absolute inset-0">
             <img

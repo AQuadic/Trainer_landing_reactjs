@@ -3,7 +3,7 @@ import BackArrow from "../icons/pricing/BackArrow"
 
 const BlogHeader = () => {
     return (
-        <section className="pt-32 container">
+        <section className="md:pt-32 pt-20 container">
             <Link to='/' className="md:hidden flex items-center gap-21.75 mb-6">
                 <BackArrow />
                 <p className="text-[#0F0F0F] text-xl font-semibold">Blogs</p>

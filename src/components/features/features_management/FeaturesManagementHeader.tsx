@@ -1,6 +1,9 @@
+import BackArrow from "@/components/icons/pricing/BackArrow"
+import { Link } from "react-router-dom"
+
 const FeaturesManagementHeader = () => {
     return (
-        <section className="container md:pb-22 pt-44 flex md:flex-row flex-col-reverse items-center justify-between gap-6">
+        <section className="container md:pb-22 pt-22 flex md:flex-row flex-col-reverse items-center justify-between gap-6">
             <div>
                 <h2 className="md:w-96 text-[#001B3F] md:text-[40px] text-base font-semibold text-center md:text-start">
                     Effortless Scheduling Management
@@ -21,6 +24,11 @@ const FeaturesManagementHeader = () => {
                     alt="management_header"
                 />
             </div>
+
+            <Link to='/' className="md:hidden flex items-center gap-13.25 mb-6">
+                <BackArrow />
+                <p className="text-[#0F0F0F] text-xl font-semibold">Management</p>
+            </Link>
         </section>
     )
 }

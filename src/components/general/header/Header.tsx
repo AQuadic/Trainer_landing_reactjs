@@ -202,7 +202,7 @@ const Header = () => {
                     {NavLinks.map((link) => {
                       if (link.path === "/features") {
                         return (
-                          <li key={link.path}>
+                          <li key={link.path} className="border border-[#C8C8C8] rounded-4xl">
                             <button
                               onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
                               className="flex items-center justify-between w-full px-4 py-2 text-foreground font-medium hover:bg-gray-100 rounded-lg transition-colors"
@@ -229,9 +229,8 @@ const Header = () => {
                                       <li key={item.path}>
                                         <Link
                                           to={item.path}
-                                          className="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                                          className="flex items-center gap-3 py-2 text-[#000000] hover:bg-gray-100 rounded-lg transition-colors"
                                         >
-                                          {item.icon}
                                           <span>{item.label}</span>
                                         </Link>
                                       </li>

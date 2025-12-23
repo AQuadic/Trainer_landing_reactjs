@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion";
+import { Link } from "react-router-dom";
+import BackArrow from "../icons/pricing/BackArrow";
 
 const faqsData = [
   { id: "item-1", question: "Is there a free trial?", answer: "Yes. It adheres to the WAI-ARIA design pattern." },
@@ -15,7 +17,11 @@ const FAQs = () => {
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
 
   return (
-    <section className="container pt-32 pb-17">
+    <section className="container md:pt-32 pt-16 pb-17">
+        <Link to='/' className="md:hidden flex items-center gap-13.25 mb-6">
+          <BackArrow />
+          <p className="text-[#0F0F0F] text-xl font-semibold">FAQs</p>
+      </Link>
       <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold text-center">
         Frequently Asked Questions
       </h2>
