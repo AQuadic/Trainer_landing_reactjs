@@ -6,39 +6,38 @@ import Management from "../icons/home/Management";
 import OnlinePayments from "../icons/home/OnlinePayments";
 import Scheduling from "../icons/home/Scheduling";
 import YourOwnApp from "../icons/home/YourOwnApp";
+import { useTranslation } from "react-i18next";
 
 const HomeFeatures = () => {
+  const { t } = useTranslation("homefeatures");
   const [selected, setSelected] = useState<number | null>(null);
 
   const FeaturesData = [
-    { icon: Management, text: "Management" },
-    { icon: Scheduling, text: "Scheduling" },
-    { icon: Bookings, text: "Bookings" },
-    { icon: OnlinePayments, text: "Online Payments" },
-    { icon: Analytics, text: "Analytics" },
-    { icon: YourOwnApp, text: "Your Own App" },
-    { icon: Gateways, text: "Gateways" },
+    { icon: Management, text: t('management') },
+    { icon: Scheduling, text: t('scheduling') },
+    { icon: Bookings, text: t('bookings') },
+    { icon: OnlinePayments, text: t('online_payments') },
+    { icon: Analytics, text: t('analytics') },
+    { icon: YourOwnApp, text: t('your_own_app') },
+    { icon: Gateways, text: t('gateways') },
   ];
 
   return (
     <section className="container py-17">
       <h2 className="md:block hidden text-[#001B3F] text-[32px] font-semibold leading-[100%] text-center">
-        We Make Managing Your Business Easy and Professional
+        {t('features_title')}
       </h2>
 
       <h2 className="md:hidden block text-[#001B3F] text-base font-semibold leading-[150%] text-center">
-        Manage, Grow, and Optimize Your Sports Business Effortlessly
+        {t('mob_features_title')}
       </h2>
 
       <p className="md:block hidden text-[#565555] text-2xl font-medium mt-6 leading-[150%] text-center">
-        “Handle bookings, memberships, classes, and payments seamlessly—all in
-        one smart platform <br />
-        designed to grow your sports business.”
+        {t('features_subtitle')}
       </p>
 
       <p className="md:hidden block text-[#565555] text-xs font-medium mt-3 leading-[150%] text-center">
-        “Manage bookings, memberships, and classes—all in one platform built to
-        grow your sports business.”
+        {t('mob_features_subtitle')}
       </p>
 
       <div className="md:mt-14.5 mt-4 flex flex-wrap items-center justify-center gap-4">
