@@ -8,6 +8,9 @@ import heroAr from "./locales/ar/home/hero.json";
 import homefeaturesEn from "./locales/en/home/homefeatures.json";
 import homefeaturesAr from "./locales/ar/home/homefeatures.json";
 
+import homemembershipEn from "./locales/en/home/homemembership.json";
+import homemembershipAr from "./locales/ar/home/homemembership.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -16,10 +19,12 @@ i18n
       en: {
         hero: heroEn,
         homefeatures: homefeaturesEn,
+        homemembership: homemembershipEn,
       },
       ar: {
         hero: heroAr,
         homefeatures: homefeaturesAr,
+        homemembership: homemembershipAr,
       },
     },
     fallbackLng: "en",
