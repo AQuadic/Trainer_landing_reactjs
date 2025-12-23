@@ -1,12 +1,15 @@
+import { useTranslation } from "react-i18next";
 import ContactForm from "../general/ContactForm"
 
 const BlogContact = () => {
-
+    const { t } = useTranslation("hero");
     return (
         <section className="container md:my-37 my-8 md:bg-transparent bg-[#F3F7FC] py-4 md:py-0">
-            <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center">We’re Here to Support You</h2>
+            <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold leading-[100%] text-center">
+                {t('we_are_here')}
+            </h2>
             <p className="text-[#565555] md:text-2xl text-xs font-medium leading-[150%] md:mt-6 mt-3 text-center">
-                Reach out to us anytime — our team is always ready to help you find the best solutions, answer <br /> your questions, and guide you toward growing your sports business with confidence.
+                {t('reach_out')}
             </p>
 
             <div className="md:mt-17 mt-6 flex flex-wrap items-center justify-between gap-6">

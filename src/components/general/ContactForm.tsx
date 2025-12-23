@@ -6,8 +6,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Calendar } from "../ui/calendar"
 import { format } from "date-fns"
 import { PhoneInput, type PhoneValue } from '../compound/PhoneInput'
+import { useTranslation } from 'react-i18next'
 
 const ContactForm = () => {
+    const { t } = useTranslation("hero");
     const [date, setDate] = React.useState<Date>()
     const [phone, setPhone] = React.useState<PhoneValue>({
         code: "EG",
@@ -22,13 +24,13 @@ const ContactForm = () => {
                     htmlFor="name"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
-                    Name
+                    {t("name")}
                 </label>
                 <input 
                     type="text" 
                     name="name" 
                     className="md:w-[384px] w-87.5 h-14 border border-[#C8C8C8] rounded-4xl px-4"
-                    placeholder="Enter your name"
+                    placeholder={t("enter_your_name")}
                 />
             </div>
             {/* Company name */}
@@ -37,13 +39,13 @@ const ContactForm = () => {
                     htmlFor="company_name"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
-                    Company name
+                    {t("company_name")}
                 </label>
                 <input 
                     type="text" 
                     name="company_name" 
                     className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
-                    placeholder="Enter your company name"
+                    placeholder={t("enter_your_company_name")}
                 />
             </div>
         </div>
@@ -55,11 +57,11 @@ const ContactForm = () => {
                     htmlFor="type_of_business"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
-                    Type of Business
+                    {t("type_of_business")}
                 </label>
                 <Select>
                 <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
-                    <SelectValue placeholder="Choose type" />
+                    <SelectValue placeholder={t("choose_type")} />
                 </SelectTrigger>
                 <SelectContent>
                     <SelectItem value="light">Light</SelectItem>
@@ -74,11 +76,11 @@ const ContactForm = () => {
                     htmlFor="NOF_branches"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
-                    Number of Branches
+                    {t("number_of_branches")}
                 </label>
                 <Select>
                 <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
-                    <SelectValue placeholder="Choose number" />
+                    <SelectValue placeholder={t("choose_number")} />
                 </SelectTrigger>
                 <SelectContent>
                     <SelectItem value="1">1</SelectItem>
@@ -95,7 +97,7 @@ const ContactForm = () => {
                     htmlFor="name"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
-                    Phone Number
+                    {t("phone_number")}
                 </label>
                 <PhoneInput
                     value={phone}
@@ -107,20 +109,20 @@ const ContactForm = () => {
                     htmlFor="company_name"
                     className="text-[#0F0F0F] text-base font-medium"
                 >
-                    Email
+                    {t("company_name")}
                 </label>
                 <input 
                     type="email" 
                     name="email" 
                     className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
-                    placeholder="Enter your email"
+                    placeholder={t("enter_your_email")}
                 />
             </div>
         </div>
 
         <div className="flex flex-col gap-4 mt-10">
             <label htmlFor="request_demo" className="text-[#0F0F0F] text-base font-medium">
-                Request a Demo
+                {t("request_demo")}
             </label>
             <Popover>
                 <PopoverTrigger asChild  className="w-full! h-14 rounded-4xl">
@@ -129,7 +131,7 @@ const ContactForm = () => {
                     data-empty={!date}
                     className="data-[empty=true]:text-muted-foreground w-70 justify-between text-left font-normal"
                 >
-                    {date ? format(date, "PPP") : <span>Choose a day</span>}
+                    {date ? format(date, "PPP") : <span>{t("choose_a_day")}</span>}
                     <CalendarIcon />
                 </Button>
                 </PopoverTrigger>
@@ -140,7 +142,7 @@ const ContactForm = () => {
         </div>
 
         <button className="w-full h-14 text-[#FEFEFE] text-lg font-semibold mt-10 bg-[linear-gradient(90deg,#6594D0_0%,#071C36_100%)] rounded-4xl">
-            Send
+            {t('send')}
         </button>
     </form>
     )
