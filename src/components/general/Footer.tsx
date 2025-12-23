@@ -38,9 +38,9 @@ const Footer = () => {
     }, [pathname]);
 
     return (
-        <footer className="py-14.5 container">
+        <footer className="md:py-14.5 py-8 container">
             <div className="w-full h-0.5 bg-[linear-gradient(90deg,#15509C_0%,#071C36_100%)]"></div>
-            <div className="my-14.25 grid md:grid-cols-4 justify-between">
+            <div className="md:my-14.25 my-8 grid md:grid-cols-4 justify-between">
                 <div className="">
                     <img 
                         src="/footerLogo.svg"
@@ -77,10 +77,10 @@ const Footer = () => {
                 <div className="flex flex-col md:items-start items-center md:mt-0 mt-6">
                     <h2 className="text-[#0F0F0F] text-base font-medium leading-[100%] mb-4">Privacy</h2>
                     <div className="flex flex-col gap-5">
-                        <Link to='/terms' className="text-[#0F0F0F] text-base leading-[100%]">
+                        <Link to='/terms' className="text-[#0F0F0F] text-base leading-[100%] md:text-start text-center">
                             Terms & Conditions
                         </Link>
-                        <Link to='/privacy' className="text-[#0F0F0F] text-base leading-[100%]">
+                        <Link to='/privacy' className="text-[#0F0F0F] text-base leading-[100%] md:text-start text-center">
                             Privacy Policy
                         </Link>
                     </div>
