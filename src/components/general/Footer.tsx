@@ -9,7 +9,7 @@ import Phone from "../icons/general/Phone"
 import { useTranslation } from "react-i18next"
 
 const Footer = () => {
-    const { t } = useTranslation("hero");
+    const { t, i18n } = useTranslation("hero");
     const { pathname } = useLocation();
     const [isHomeInTop90, setIsHomeInTop90] = useState(false);
     
@@ -70,7 +70,7 @@ const Footer = () => {
                             isHomeInTop90 ? "text-white" : "text-foreground"
                             }`}
                         >
-                            {link.nameEn}
+                            {i18n.language === "ar" ? link.nameAr : link.nameEn}
                         </Link>
                         ))}
                     </nav>
