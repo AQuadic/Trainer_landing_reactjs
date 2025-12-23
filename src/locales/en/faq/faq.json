@@ -1,0 +1,27 @@
+{
+	"mobileBack": "FAQs",
+	"heading": "Frequently Asked Questions",
+	"description": "Find answers to the most common questions about our services and features. This guide helps you get the information you need\nquickly and easily.",
+	"items": {
+		"item1": {
+			"question": "Is there a free trial?",
+			"answer": "Yes. It adheres to the WAI-ARIA design pattern."
+		},
+		"item2": {
+			"question": "Are all features available in every plan?",
+			"answer": "Yes. It adheres to the WAI-ARIA design pattern."
+		},
+		"item3": {
+			"question": "Can I switch between plans later?",
+			"answer": "Yes. It adheres to the WAI-ARIA design pattern."
+		},
+		"item4": {
+			"question": "Do you provide training for my team?",
+			"answer": "Yes. It adheres to the WAI-ARIA design pattern."
+		},
+		"item5": {
+			"question": "Can I access the system from any device?",
+			"answer": "Yes. It adheres to the WAI-ARIA design pattern."
+		}
+	}
+}

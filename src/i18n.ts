@@ -17,6 +17,9 @@ import homestandAr from "./locales/ar/home/homestand.json";
 import testimonialsEn from "./locales/en/home/testimonials.json";
 import testimonialsAr from "./locales/ar/home/testimonials.json";
 
+import faqEn from "./locales/en/faq/faq.json";
+import faqAr from "./locales/ar/faq/faq.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -28,6 +31,7 @@ i18n
         homemembership: homemembershipEn,
         homestand: homestandEn,
         testimonials: testimonialsEn,
+        faq: faqEn,
       },
       ar: {
         hero: heroAr,
@@ -35,6 +39,7 @@ i18n
         homemembership: homemembershipAr,
         homestand: homestandAr,
         testimonials: testimonialsAr,
+        faq: faqAr,
       },
     },
     fallbackLng: "en",
