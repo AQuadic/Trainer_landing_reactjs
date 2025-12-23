@@ -19,31 +19,34 @@ import SportsAcademies from "@/components/icons/general/SportsAcademies";
 import SportsFederations from "@/components/icons/general/SportsFederations";
 import EquestrianClubs from "@/components/icons/general/EquestrianClubs";
 import Yoga from "@/components/icons/general/Yoga";
+import { useTranslation } from "react-i18next";
 
 interface HeaderDesktopProps {
   isHomeInTop90: boolean;
 }
 
 const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
+  const { t, i18n } = useTranslation("hero");
+
   const featuresSubmenu = [
-    { path: "/features/management", icon: <HeaderManagement />, label: "Management" },
-    { path: "/features/scheduling", icon: <HeaderScheduling />, label: "Scheduling" },
-    { path: "/features/scheduling", icon: <HeaderBookings />, label: "Bookings" },
-    { path: "/features/management", icon: <OnlinePayments />, label: "Online Payments" },
-    { path: "/features/analytics", icon: <HeaderAnalytics />, label: "Analytics" },
-    { path: "/features/your_own_app", icon: <YourOwnApp />, label: "Your Own App" },
-    { path: "/features/gateways", icon: <HomeGateways />, label: "Gateways" },
+    { path: "/features/management", icon: <HeaderManagement />, labelKey: t('management') },
+    { path: "/features/scheduling", icon: <HeaderScheduling />, labelKey: t('scheduling') },
+    { path: "/features/scheduling", icon: <HeaderBookings />, labelKey: t('bookings') },
+    { path: "/features/management", icon: <OnlinePayments />, labelKey: t('online_payments') },
+    { path: "/features/analytics", icon: <HeaderAnalytics />, labelKey: t('analytics') },
+    { path: "/features/your_own_app", icon: <YourOwnApp />, labelKey: t('your_own_app') },
+    { path: "/features/gateways", icon: <HomeGateways />, labelKey: t('gateways') },
   ];
 
   const businessTypeSubmenu = [
-    { path: "/business-type/crossfit", icon: <Crossfit />, label: "CrossFit" },
-    { path: "/business-type/gym", icon: <Gym />, label: "Gym" },
-    { path: "/business-type/fitness-training", icon: <FitnessTraining />, label: "Fitness Training" },
-    { path: "/business-type/martial-arts", icon: <MartialArts />, label: "Martial Arts" },
-    { path: "/business-type/sports-academies", icon: <SportsAcademies />, label: "Sports Academies" },
-    { path: "/business-type/sports-federations", icon: <SportsFederations />, label: "Sports Federations" },
-    { path: "/business-type/equestrian-clubs", icon: <EquestrianClubs />, label: "Equestrian Clubs" },
-    { path: "/business-type/yoga", icon: <Yoga />, label: "Yoga" },
+    { path: "/business-type/crossfit", icon: <Crossfit />, labelKey: t('crossfit') },
+    { path: "/business-type/gym", icon: <Gym />, labelKey: t('gym') },
+    { path: "/business-type/fitness-training", icon: <FitnessTraining />, labelKey: t('fitness_training') },
+    { path: "/business-type/martial-arts", icon: <MartialArts />, labelKey: t('martial_arts') },
+    { path: "/business-type/sports-academies", icon: <SportsAcademies />, labelKey: t('sports_academies') },
+    { path: "/business-type/sports-federations", icon: <SportsFederations />, labelKey: t('sports_federations') },
+    { path: "/business-type/equestrian-clubs", icon: <EquestrianClubs />, labelKey: t('equestrian_clubs') },
+    { path: "/business-type/yoga", icon: <Yoga />, labelKey: t('yoga') },
   ];
 
   return (
@@ -73,6 +76,8 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
 
       <nav className="flex items-center">
         {NavLinks.map((link) => {
+          const label = i18n.language === "ar" ? link.nameAr : link.nameEn;
+
           if (link.path === "/features") {
             return (
               <div key={link.path} className="relative group">
@@ -82,7 +87,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
                     isHomeInTop90 ? "text-white" : "text-foreground"
                   }`}
                 >
-                  {link.nameEn}
+                  {label}
                 </Link>
                 <div className="absolute left-0 top-full mt-2 w-48 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   {featuresSubmenu.map((item) => (
@@ -92,7 +97,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
                       className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 first:rounded-t-4xl last:rounded-b-4xl transition-colors"
                     >
                       {item.icon}
-                      <span>{item.label}</span>
+                      <span>{i18n.language === "ar" ? item.labelKey /* add Arabic keys in i18n */ : item.labelKey}</span>
                     </Link>
                   ))}
                 </div>
@@ -109,21 +114,21 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
                     isHomeInTop90 ? "text-white" : "text-foreground"
                   }`}
                 >
-                  {link.nameEn}
+                  {label}
                 </Link>
                 <div className="absolute left-0 top-full mt-2 w-56 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   {businessTypeSubmenu.map((item) => (
                     <Link
-                        key={item.path}
-                        to={item.path}
-                        className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 first:rounded-t-4xl last:rounded-b-4xl transition-colors"
+                      key={item.path}
+                      to={item.path}
+                      className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 first:rounded-t-4xl last:rounded-b-4xl transition-colors"
                     >
-                        <span className="shrink-0">{item.icon}</span>
-                        <span className="text-sm font-medium text-foreground">
-                        {item.label}
-                        </span>
+                      <span className="shrink-0">{item.icon}</span>
+                      <span className="text-sm font-medium text-foreground">
+                        {i18n.language === "ar" ? item.labelKey /* Arabic label */ : item.labelKey}
+                      </span>
                     </Link>
-                    ))}
+                  ))}
                 </div>
               </div>
             );
@@ -137,7 +142,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
                 isHomeInTop90 ? "text-white" : "text-foreground"
               }`}
             >
-              {link.nameEn}
+              {label}
             </Link>
           );
         })}

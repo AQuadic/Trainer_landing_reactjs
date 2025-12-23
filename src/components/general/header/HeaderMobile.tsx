@@ -15,40 +15,59 @@ import HeaderManagement from "@/components/icons/general/HeaderManagement";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronDown } from "lucide-react";
 import Menu from "@/components/icons/general/Menu";
+import { useTranslation } from "react-i18next";
+import Crossfit from "@/components/icons/general/Crossfit";
+import Gym from "@/components/icons/general/Gym";
+import FitnessTraining from "@/components/icons/general/FitnessTraining";
+import MartialArts from "@/components/icons/general/MartialArts";
+import SportsAcademies from "@/components/icons/general/SportsAcademies";
+import SportsFederations from "@/components/icons/general/SportsFederations";
+import EquestrianClubs from "@/components/icons/general/EquestrianClubs";
+import Yoga from "@/components/icons/general/Yoga";
 
 interface HeaderMobileProps {
   isHomeInTop90: boolean;
 }
 
 const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
+  const { t, i18n } = useTranslation("hero");
   const { pathname } = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
+  const [isBusinessTypeOpen, setIsBusinessTypeOpen] = useState(false);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
     setIsFeaturesOpen(false);
+    setIsBusinessTypeOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isMobileMenuOpen]);
 
   const featuresSubmenu = [
-    { path: "/features/management", icon: <HeaderManagement />, label: "Management" },
-    { path: "/features/scheduling", icon: <HeaderScheduling />, label: "Scheduling" },
-    { path: "/features/scheduling", icon: <HeaderBookings />, label: "Bookings" },
-    { path: "/features/management", icon: <OnlinePayments />, label: "Online Payments" },
-    { path: "/features/analytics", icon: <HeaderAnalytics />, label: "Analytics" },
-    { path: "/features/your_own_app", icon: <YourOwnApp />, label: "Your Own App" },
-    { path: "/features/gateways", icon: <HomeGateways />, label: "Gateways" },
+    { path: "/features/management", icon: <HeaderManagement />, label: t("management") },
+    { path: "/features/scheduling", icon: <HeaderScheduling />, label: t("scheduling") },
+    { path: "/features/bookings", icon: <HeaderBookings />, label: t("bookings") },
+    { path: "/features/onlinePayments", icon: <OnlinePayments />, label: t("online_payments") },
+    { path: "/features/analytics", icon: <HeaderAnalytics />, label: t("analytics") },
+    { path: "/features/yourOwnApp", icon: <YourOwnApp />, label: t("your_own_app") },
+    { path: "/features/gateways", icon: <HomeGateways />, label: t("gateways") },
+  ];
+
+  const businessTypeSubmenu = [
+    { path: "/business-type/crossfit", icon: <Crossfit />, label: t("crossfit") },
+    { path: "/business-type/gym", icon: <Gym />, label: t("gym") },
+    { path: "/business-type/fitness-training", icon: <FitnessTraining />, label: t("fitness_training") },
+    { path: "/business-type/martial-arts", icon: <MartialArts />, label: t("martial_arts") },
+    { path: "/business-type/sports-academies", icon: <SportsAcademies />, label: t("sports_academies") },
+    { path: "/business-type/sports-federations", icon: <SportsFederations />, label: t("sports_federations") },
+    { path: "/business-type/equestrian-clubs", icon: <EquestrianClubs />, label: t("equestrian_clubs") },
+    { path: "/business-type/yoga", icon: <Yoga />, label: t("yoga") },
   ];
 
   return (
@@ -68,7 +87,7 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
               }`}
             />
             <img
-              src="/logo_white.svg"
+              src="/footerLogo.svg"
               alt="Logo blue"
               className={`absolute top-2 inset-0 w-15.25 h-6.75 object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-0" : "opacity-100"
@@ -79,9 +98,7 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
 
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`p-2 transition-colors duration-300 ease-in-out ${
-            isHomeInTop90 ? "text-white" : "text-foreground"
-          }`}
+          className={`p-2 transition-colors duration-300 ease-in-out ${isHomeInTop90 ? "text-white" : "text-foreground"}`}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu />}
@@ -109,11 +126,7 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b">
-                  <img
-                    src="/footerLogo.svg"
-                    alt="Logo"
-                    className="h-8 object-contain"
-                  />
+                  <img src="/footerLogo.svg" alt="Logo" className="h-8 object-contain" />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -133,14 +146,13 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
                               onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
                               className="flex items-center justify-between w-full px-4 py-2 text-foreground font-medium hover:bg-gray-100 rounded-lg transition-colors"
                             >
-                              <span>{link.nameEn}</span>
-                              <ChevronDown 
-                                size={20} 
-                                className={`transition-transform duration-200 ${
-                                  isFeaturesOpen ? "rotate-180" : ""
-                                }`}
+                              <span>{i18n.language === "ar" ? link.nameAr : link.nameEn}</span>
+                              <ChevronDown
+                                size={20}
+                                className={`transition-transform duration-200 ${isFeaturesOpen ? "rotate-180" : ""}`}
                               />
                             </button>
+
                             <AnimatePresence>
                               {isFeaturesOpen && (
                                 <motion.ul
@@ -150,8 +162,50 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
                                   transition={{ duration: 0.2 }}
                                   className="overflow-hidden"
                                 >
-                                  <div className="space-y-1 mt-2 ml-4">
+                                  <div className="space-y-1 mt-2 ltr:ml-4 rtl:mr-4">
                                     {featuresSubmenu.map((item) => (
+                                      <li key={item.path}>
+                                        <Link
+                                          to={item.path}
+                                          className="flex items-center gap-3 py-2 text-[#000000] hover:bg-gray-100 rounded-lg transition-colors"
+                                        >
+                                          <span>{item.label}</span>
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </div>
+                                </motion.ul>
+                              )}
+                            </AnimatePresence>
+                          </li>
+                        );
+                      }
+
+                      if (link.path === "/business-type") {
+                        return (
+                          <li key={link.path} className="border border-[#C8C8C8] rounded-4xl">
+                            <button
+                              onClick={() => setIsBusinessTypeOpen(!isBusinessTypeOpen)}
+                              className="flex items-center justify-between w-full px-4 py-2 text-foreground font-medium hover:bg-gray-100 rounded-lg transition-colors"
+                            >
+                              <span>{i18n.language === "ar" ? link.nameAr : link.nameEn}</span>
+                              <ChevronDown
+                                size={20}
+                                className={`transition-transform duration-200 ${isBusinessTypeOpen ? "rotate-180" : ""}`}
+                              />
+                            </button>
+
+                            <AnimatePresence>
+                              {isBusinessTypeOpen && (
+                                <motion.ul
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="overflow-hidden"
+                                >
+                                  <div className="space-y-1 mt-2 ltr:ml-4 rtl:mr-4">
+                                    {businessTypeSubmenu.map((item) => (
                                       <li key={item.path}>
                                         <Link
                                           to={item.path}
@@ -175,7 +229,7 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
                             to={link.path}
                             className="block px-4 py-2 text-foreground hover:bg-gray-100 rounded-lg transition-colors"
                           >
-                            {link.nameEn}
+                            {i18n.language === "ar" ? link.nameAr : link.nameEn}
                           </Link>
                         </li>
                       );

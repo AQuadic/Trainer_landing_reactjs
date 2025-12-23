@@ -21,5 +21,22 @@
     "enter_your_email": "Enter your email",
     "enter_your_phone_number": "Enter your phone number",
     "search_country_or_code": "Search country or code",
-    "choose_a_day": "Choose a day"
+    "choose_a_day": "Choose a day",
+
+    "management": "Management",
+    "scheduling": "Scheduling",
+    "bookings": "Bookings",
+    "online_payments": "Online Payments",
+    "analytics": "Analytics",
+    "your_own_app": "Your Own App",
+    "gateways": "Gateways",
+
+    "crossfit": "CrossFit",
+    "gym": "Gym",
+    "fitness_training": "Fitness Training",
+    "martial_arts": "Martial Arts",
+    "sports_academies": "Sports Academies",
+    "sports_federations": "Sports Federations",
+    "equestrian_clubs": "Equestrian Clubs",
+    "yoga": "Yoga"
 }

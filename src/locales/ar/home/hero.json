@@ -21,5 +21,22 @@
     "enter_your_email": "أدخل بريدك الإلكتروني",
     "enter_your_phone_number": "أدخل رقم هاتفك",
     "search_country_or_code": "ابحث عن الدولة أو الرمز",
-    "choose_a_day": "اختر يومًا"
+    "choose_a_day": "اختر يومًا",
+
+    "management": "الإدارة",
+    "scheduling": "الجدولة",
+    "bookings": "الحجوزات",
+    "online_payments": "المدفوعات عبر الإنترنت",
+    "analytics": "التحليلات",
+    "your_own_app": "تطبيقك الخاص",
+    "gateways": "بوابات الدفع",
+
+    "crossfit": "كروس فيت",
+    "gym": "صالة الألعاب الرياضية",
+    "fitness_training": "التدريب اللياقي",
+    "martial_arts": "الفنون القتالية",
+    "sports_academies": "الأكاديميات الرياضية",
+    "sports_federations": "الاتحادات الرياضية",
+    "equestrian_clubs": "نوادي الفروسية",
+    "yoga": "اليوغا"
 }
