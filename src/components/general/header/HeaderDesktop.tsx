@@ -4,7 +4,6 @@ import { NavLinks } from "@/constants/NavLinks";
 import { Link } from "react-router-dom";
 import ChangeLanguage from "./ChangeLanguage";
 import RequestDemo from "./RequestDemo";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import HeaderScheduling from "@/components/icons/general/HeaderScheduling";
 import HeaderBookings from "@/components/icons/general/HeaderBookings";
 import OnlinePayments from "@/components/icons/general/OnlinePayments";
@@ -12,6 +11,14 @@ import HeaderAnalytics from "@/components/icons/general/HeaderAnalytics";
 import YourOwnApp from "@/components/icons/general/YourOwnApp";
 import HomeGateways from "@/components/icons/general/HomeGateways";
 import HeaderManagement from "@/components/icons/general/HeaderManagement";
+import Crossfit from "@/components/icons/general/Crossfit";
+import Gym from "@/components/icons/general/Gym";
+import FitnessTraining from "@/components/icons/general/FitnessTraining";
+import MartialArts from "@/components/icons/general/MartialArts";
+import SportsAcademies from "@/components/icons/general/SportsAcademies";
+import SportsFederations from "@/components/icons/general/SportsFederations";
+import EquestrianClubs from "@/components/icons/general/EquestrianClubs";
+import Yoga from "@/components/icons/general/Yoga";
 
 interface HeaderDesktopProps {
   isHomeInTop90: boolean;
@@ -26,6 +33,17 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
     { path: "/features/analytics", icon: <HeaderAnalytics />, label: "Analytics" },
     { path: "/features/your_own_app", icon: <YourOwnApp />, label: "Your Own App" },
     { path: "/features/gateways", icon: <HomeGateways />, label: "Gateways" },
+  ];
+
+  const businessTypeSubmenu = [
+    { path: "/business-type/crossfit", icon: <Crossfit />, label: "CrossFit" },
+    { path: "/business-type/gym", icon: <Gym />, label: "Gym" },
+    { path: "/business-type/fitness-training", icon: <FitnessTraining />, label: "Fitness Training" },
+    { path: "/business-type/martial-arts", icon: <MartialArts />, label: "Martial Arts" },
+    { path: "/business-type/sports-academies", icon: <SportsAcademies />, label: "Sports Academies" },
+    { path: "/business-type/sports-federations", icon: <SportsFederations />, label: "Sports Federations" },
+    { path: "/business-type/equestrian-clubs", icon: <EquestrianClubs />, label: "Equestrian Clubs" },
+    { path: "/business-type/yoga", icon: <Yoga />, label: "Yoga" },
   ];
 
   return (
@@ -57,31 +75,57 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
         {NavLinks.map((link) => {
           if (link.path === "/features") {
             return (
-              <DropdownMenu key={link.path}>
-                <DropdownMenuTrigger asChild>
-                  <button
-                    className={`mx-4 transition-colors duration-300 ease-in-out ${
-                      isHomeInTop90 ? "text-white" : "text-foreground"
-                    }`}
-                  >
-                    {link.nameEn}
-                  </button>
-                </DropdownMenuTrigger>
-
-                <DropdownMenuContent
-                  align="start"
-                  className="w-48 mt-2 rounded-4xl"
+              <div key={link.path} className="relative group">
+                <Link
+                  to={link.path}
+                  className={`mx-4 transition-colors duration-300 ease-in-out ${
+                    isHomeInTop90 ? "text-white" : "text-foreground"
+                  }`}
                 >
+                  {link.nameEn}
+                </Link>
+                <div className="absolute left-0 top-full mt-2 w-48 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   {featuresSubmenu.map((item) => (
-                    <DropdownMenuItem key={item.path} asChild>
-                      <Link to={item.path}>
-                        {item.icon}
-                        {item.label}
-                      </Link>
-                    </DropdownMenuItem>
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 first:rounded-t-4xl last:rounded-b-4xl transition-colors"
+                    >
+                      {item.icon}
+                      <span>{item.label}</span>
+                    </Link>
                   ))}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                </div>
+              </div>
+            );
+          }
+
+          if (link.path === "/business-type") {
+            return (
+              <div key={link.path} className="relative group">
+                <Link
+                  to={link.path}
+                  className={`mx-4 transition-colors duration-300 ease-in-out ${
+                    isHomeInTop90 ? "text-white" : "text-foreground"
+                  }`}
+                >
+                  {link.nameEn}
+                </Link>
+                <div className="absolute left-0 top-full mt-2 w-56 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  {businessTypeSubmenu.map((item) => (
+                    <Link
+                        key={item.path}
+                        to={item.path}
+                        className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 first:rounded-t-4xl last:rounded-b-4xl transition-colors"
+                    >
+                        <span className="shrink-0">{item.icon}</span>
+                        <span className="text-sm font-medium text-foreground">
+                        {item.label}
+                        </span>
+                    </Link>
+                    ))}
+                </div>
+              </div>
             );
           }
 
