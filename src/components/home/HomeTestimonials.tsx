@@ -2,7 +2,7 @@ import { TestimonialsSlider } from "./TestimonialsSlider"
 
 const HomeTestimonials = () => {
     return (
-        <section className="container md:py-17 py-6">
+        <section className=" md:py-17 py-6">
             <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold text-center">
                 Their Words Are Our Pride
             </h2>
