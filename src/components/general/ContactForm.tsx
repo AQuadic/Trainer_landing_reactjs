@@ -10,9 +10,9 @@ const ContactForm = () => {
     const [date, setDate] = React.useState<Date>()
     return (
     <form>
-        <div className="flex flex-wrap gap-6">
+        <div className="flex md:flex-row flex-col gap-6 w-full">
             {/* name */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 w-full">
                 <label 
                     htmlFor="name"
                     className="text-[#0F0F0F] text-base font-medium"
@@ -22,7 +22,7 @@ const ContactForm = () => {
                 <input 
                     type="text" 
                     name="name" 
-                    className="w-[384px] h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                    className="md:w-[384px] w-87.5 h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder="Enter your name"
                 />
             </div>
@@ -37,13 +37,13 @@ const ContactForm = () => {
                 <input 
                     type="text" 
                     name="company_name" 
-                    className="w-[384px] h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                    className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder="Enter your company name"
                 />
             </div>
         </div>
 
-        <div className="flex flex-wrap gap-6 mt-10">
+        <div className="flex md:flex-row flex-col gap-6 mt-10">
             {/* Type of Business */}
             <div className="flex flex-col gap-4">
                 <label 
@@ -53,7 +53,7 @@ const ContactForm = () => {
                     Type of Business
                 </label>
                 <Select>
-                <SelectTrigger className="w-[384px] h-14! rounded-4xl">
+                <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
                     <SelectValue placeholder="Choose type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -72,7 +72,7 @@ const ContactForm = () => {
                     Number of Branches
                 </label>
                 <Select>
-                <SelectTrigger className="w-[384px] h-14! rounded-4xl">
+                <SelectTrigger className="md:w-[384px] w-full h-14! rounded-4xl">
                     <SelectValue placeholder="Choose number" />
                 </SelectTrigger>
                 <SelectContent>
@@ -84,8 +84,8 @@ const ContactForm = () => {
             </div>
         </div>
 
-        <div className="flex flex-wrap gap-6 mt-10">
-            <div className="flex flex-col gap-4">
+        <div className="flex md:flex-row flex-col gap-6 mt-10">
+            <div className="flex flex-col gap-4 w-full">
                 <label 
                     htmlFor="name"
                     className="text-[#0F0F0F] text-base font-medium"
@@ -95,11 +95,11 @@ const ContactForm = () => {
                 <input 
                     type="tel" 
                     name="tel" 
-                    className="w-[384px] h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                    className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder="+20"
                 />
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 w-full">
                 <label 
                     htmlFor="company_name"
                     className="text-[#0F0F0F] text-base font-medium"
@@ -109,7 +109,7 @@ const ContactForm = () => {
                 <input 
                     type="email" 
                     name="email" 
-                    className="w-[384px] h-14 border border-[#C8C8C8] rounded-4xl px-4"
+                    className="md:w-[384px] w-full h-14 border border-[#C8C8C8] rounded-4xl px-4"
                     placeholder="Enter your email"
                 />
             </div>

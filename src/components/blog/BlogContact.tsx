@@ -9,7 +9,7 @@ const BlogContact = () => {
                 Reach out to us anytime — our team is always ready to help you find the best solutions, answer <br /> your questions, and guide you toward growing your sports business with confidence.
             </p>
 
-            <div className="md:mt-17 mt-6 flex items-center justify-between gap-6">
+            <div className="md:mt-17 mt-6 flex flex-wrap items-center justify-between gap-6">
                 <ContactForm />
                 <div>
                     <img 

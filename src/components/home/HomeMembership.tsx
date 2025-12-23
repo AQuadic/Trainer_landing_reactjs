@@ -1,6 +1,6 @@
 const HomeMembership = () => {
     return (
-        <section className="bg-[#F3F7FC] py-19">
+        <section className="bg-[#F3F7FC] md:py-19 py-8">
             <div className="container flex lg:flex-row flex-col items-center">
                 <div>
                     <h2 className="text-[#001B3F] md:text-[32px] text-xl font-semibold">Full Control of Your Members</h2>
@@ -13,7 +13,7 @@ const HomeMembership = () => {
                 </div>
                 <div className="w-full">
                     <img
-                        src="../../../public/images/blog/membership_img.png"
+                        src="/images/blog/membership_img.png"
                         alt="membership image"
                         className="md:w-123.75 h-107.5"
                     />

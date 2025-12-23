@@ -33,11 +33,11 @@ const cards = [
 const HomeStandout = () => {
     return (
         <section className="container md:py-17">
-        <h2 className="text-[#001B3F] text-[32px] font-semibold text-center">
+        <h2 className="text-[#001B3F] md:text-[32px] text-base font-semibold text-center">
             What Makes Us Stand Out
         </h2>
 
-        <p className="text-[#565555] text-2xl font-medium mt-6 text-center">
+        <p className="text-[#565555] md:text-2xl text-xs font-medium md:mt-6 mt-3 text-center">
             “We provide innovative tools, seamless management, and professional solutions that help your
             <br /> sports business grow and succeed.”
         </p>
@@ -46,7 +46,7 @@ const HomeStandout = () => {
             type="single"
             collapsible
             className="
-            flex flex-col gap-4 mt-10
+            flex flex-col gap-4 mt-6
             md:flex-row md:flex-wrap md:gap-6 md:justify-center md:mt-14
             "
         >
