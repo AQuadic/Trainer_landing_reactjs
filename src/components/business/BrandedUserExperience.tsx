@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const BrandedUserExperience = () => {
     return (
         <section className="bg-[#F3F7FC] md:py-12 py-4">
@@ -16,14 +18,16 @@ const BrandedUserExperience = () => {
                     <p className="md:w-130 text-[#565555] md:text-lg text-sm font-medium leading-[150%] md:mt-6 mt-3 text-center md:text-start">
                         Your sports academy’s brand is unique — and your app should reflect that. We provide you with the opportunity to create a fully customized mobile app for your academy, allowing you to engage, educate, and inspire your members in a way that truly represents your identity.
                     </p>
-                    <button
-                        className="w-full h-14 mt-6 rounded-4xl border-2 text-[#15509C] text-lg font-semibold"
-                        style={{
-                            borderImage: "linear-gradient(to right, #6594D0, #072E60) 1",
-                        }}
-                        >
-                        Request a Demo
-                    </button>
+                    <Link to='/see_more'>
+                        <button
+                            className="w-full h-14 mt-6 rounded-4xl border-2 text-[#15509C] text-lg font-semibold"
+                            style={{
+                                borderImage: "linear-gradient(to right, #6594D0, #072E60) 1",
+                            }}
+                            >
+                            See More
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>
