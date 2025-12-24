@@ -18,7 +18,7 @@ const BlogContact = () => {
                     <img 
                         src="/images/blog/blog_contact.jpg"
                         alt="blog contact"
-                        className="w-[384px] h-142 opacity-50 rounded-4xl"
+                        className="w-[384px] h-142 opacity-80 rounded-4xl"
                     />
                 </div>
             </div>
