@@ -32,8 +32,8 @@ import seemoreAr from "./locales/ar/seemore/seemore.json";
 import businesstypeEn from "./locales/en/business/businesstype.json";
 import businesstypeAr from "./locales/ar/business/businesstype.json";
 
-import managementeEn from "./locales/en/features/Management.json";
-import managementeAr from "./locales/ar/features/Management.json";
+import managementEn from "./locales/en/features/management.json";
+import managementAr from "./locales/ar/features/management.json";
 
 import ownappEn from "./locales/en/features/ownapp.json";
 import ownappAr from "./locales/ar/features/ownapp.json";
@@ -57,9 +57,9 @@ i18n
         pricing: pricingEn,
         seemore: seemoreEn,
         businesstype: businesstypeEn,
-        management: managementeEn,
+        management: managementEn,
         ownapp: ownappEn,
-        schedual: schedualEn
+        schedual: schedualEn,
       },
       ar: {
         hero: heroAr,
@@ -72,9 +72,9 @@ i18n
         pricing: pricingAr,
         seemore: seemoreAr,
         businesstype: businesstypeAr,
-        management: managementeAr,
+        management: managementAr,
         ownapp: ownappAr,
-        schedual: schedualAr
+        schedual: schedualAr,
       },
     },
     lng: "en",
