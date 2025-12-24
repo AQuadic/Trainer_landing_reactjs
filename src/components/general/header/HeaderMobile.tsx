@@ -16,6 +16,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronDown } from "lucide-react";
 import Menu from "@/components/icons/general/Menu";
 import { useTranslation } from "react-i18next";
+import { useMetaStore, type MetaState } from "@/store/useMetaStore";
 import Crossfit from "@/components/icons/general/Crossfit";
 import Gym from "@/components/icons/general/Gym";
 import FitnessTraining from "@/components/icons/general/FitnessTraining";
@@ -31,6 +32,7 @@ interface HeaderMobileProps {
 
 const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
   const { t, i18n } = useTranslation("hero");
+  const meta = useMetaStore((state: MetaState) => state.meta);
   const { pathname } = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
@@ -50,23 +52,75 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
   }, [isMobileMenuOpen]);
 
   const featuresSubmenu = [
-    { path: "/features/management", icon: <HeaderManagement />, label: t("management") },
-    { path: "/features/scheduling", icon: <HeaderScheduling />, label: t("scheduling") },
-    { path: "/features/bookings", icon: <HeaderBookings />, label: t("bookings") },
-    { path: "/features/onlinePayments", icon: <OnlinePayments />, label: t("online_payments") },
-    { path: "/features/analytics", icon: <HeaderAnalytics />, label: t("analytics") },
-    { path: "/features/yourOwnApp", icon: <YourOwnApp />, label: t("your_own_app") },
-    { path: "/features/gateways", icon: <HomeGateways />, label: t("gateways") },
+    {
+      path: "/features/management",
+      icon: <HeaderManagement />,
+      label: t("management"),
+    },
+    {
+      path: "/features/scheduling",
+      icon: <HeaderScheduling />,
+      label: t("scheduling"),
+    },
+    {
+      path: "/features/bookings",
+      icon: <HeaderBookings />,
+      label: t("bookings"),
+    },
+    {
+      path: "/features/onlinePayments",
+      icon: <OnlinePayments />,
+      label: t("online_payments"),
+    },
+    {
+      path: "/features/analytics",
+      icon: <HeaderAnalytics />,
+      label: t("analytics"),
+    },
+    {
+      path: "/features/yourOwnApp",
+      icon: <YourOwnApp />,
+      label: t("your_own_app"),
+    },
+    {
+      path: "/features/gateways",
+      icon: <HomeGateways />,
+      label: t("gateways"),
+    },
   ];
 
   const businessTypeSubmenu = [
-    { path: "/business-type/crossfit", icon: <Crossfit />, label: t("crossfit") },
+    {
+      path: "/business-type/crossfit",
+      icon: <Crossfit />,
+      label: t("crossfit"),
+    },
     { path: "/business-type/gym", icon: <Gym />, label: t("gym") },
-    { path: "/business-type/fitness-training", icon: <FitnessTraining />, label: t("fitness_training") },
-    { path: "/business-type/martial-arts", icon: <MartialArts />, label: t("martial_arts") },
-    { path: "/business-type/sports-academies", icon: <SportsAcademies />, label: t("sports_academies") },
-    { path: "/business-type/sports-federations", icon: <SportsFederations />, label: t("sports_federations") },
-    { path: "/business-type/equestrian-clubs", icon: <EquestrianClubs />, label: t("equestrian_clubs") },
+    {
+      path: "/business-type/fitness-training",
+      icon: <FitnessTraining />,
+      label: t("fitness_training"),
+    },
+    {
+      path: "/business-type/martial-arts",
+      icon: <MartialArts />,
+      label: t("martial_arts"),
+    },
+    {
+      path: "/business-type/sports-academies",
+      icon: <SportsAcademies />,
+      label: t("sports_academies"),
+    },
+    {
+      path: "/business-type/sports-federations",
+      icon: <SportsFederations />,
+      label: t("sports_federations"),
+    },
+    {
+      path: "/business-type/equestrian-clubs",
+      icon: <EquestrianClubs />,
+      label: t("equestrian_clubs"),
+    },
     { path: "/business-type/yoga", icon: <Yoga />, label: t("yoga") },
   ];
 
@@ -80,14 +134,14 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
         <Link to="/" aria-label="Home" className="relative inline-block">
           <span className="relative block w-37.5 h-10">
             <img
-              src="/logo_white.svg"
+              src={meta?.academy.logo.url || "/logo_white.svg"}
               alt="Logo white"
               className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
-              src="/logo_white.svg"
+              src={meta?.academy.logo.url || "/logo_white.svg"}
               alt="Logo blue"
               className={`absolute top-2 inset-0 w-15.25 h-6.75 object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-0" : "opacity-100"
@@ -98,7 +152,9 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
 
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`p-2 transition-colors duration-300 ease-in-out ${isHomeInTop90 ? "text-white" : "text-foreground"}`}
+          className={`p-2 transition-colors duration-300 ease-in-out ${
+            isHomeInTop90 ? "text-white" : "text-foreground"
+          }`}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu />}
@@ -126,7 +182,11 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b">
-                  <img src="/footerLogo.svg" alt="Logo" className="h-8 object-contain" />
+                  <img
+                    src="/footerLogo.svg"
+                    alt="Logo"
+                    className="h-8 object-contain"
+                  />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -141,15 +201,24 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
                     {NavLinks.map((link) => {
                       if (link.path === "/features") {
                         return (
-                          <li key={link.path} className="border border-[#C8C8C8] rounded-4xl">
+                          <li
+                            key={link.path}
+                            className="border border-[#C8C8C8] rounded-4xl"
+                          >
                             <button
                               onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
                               className="flex items-center justify-between w-full px-4 py-2 text-foreground font-medium hover:bg-gray-100 rounded-lg transition-colors"
                             >
-                              <span>{i18n.language === "ar" ? link.nameAr : link.nameEn}</span>
+                              <span>
+                                {i18n.language === "ar"
+                                  ? link.nameAr
+                                  : link.nameEn}
+                              </span>
                               <ChevronDown
                                 size={20}
-                                className={`transition-transform duration-200 ${isFeaturesOpen ? "rotate-180" : ""}`}
+                                className={`transition-transform duration-200 ${
+                                  isFeaturesOpen ? "rotate-180" : ""
+                                }`}
                               />
                             </button>
 
@@ -183,15 +252,26 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
 
                       if (link.path === "/business-type") {
                         return (
-                          <li key={link.path} className="border border-[#C8C8C8] rounded-4xl">
+                          <li
+                            key={link.path}
+                            className="border border-[#C8C8C8] rounded-4xl"
+                          >
                             <button
-                              onClick={() => setIsBusinessTypeOpen(!isBusinessTypeOpen)}
+                              onClick={() =>
+                                setIsBusinessTypeOpen(!isBusinessTypeOpen)
+                              }
                               className="flex items-center justify-between w-full px-4 py-2 text-foreground font-medium hover:bg-gray-100 rounded-lg transition-colors"
                             >
-                              <span>{i18n.language === "ar" ? link.nameAr : link.nameEn}</span>
+                              <span>
+                                {i18n.language === "ar"
+                                  ? link.nameAr
+                                  : link.nameEn}
+                              </span>
                               <ChevronDown
                                 size={20}
-                                className={`transition-transform duration-200 ${isBusinessTypeOpen ? "rotate-180" : ""}`}
+                                className={`transition-transform duration-200 ${
+                                  isBusinessTypeOpen ? "rotate-180" : ""
+                                }`}
                               />
                             </button>
 
