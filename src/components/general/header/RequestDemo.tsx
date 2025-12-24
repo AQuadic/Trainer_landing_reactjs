@@ -18,7 +18,7 @@ interface Props {
 const RequestDemo = ({ isHome = false }: Props) => {
     const { t } = useTranslation("hero");
 
-  const gradient = "linear-gradient(90deg, #15509C 0%, #071C36 100%)";
+  const gradient = "linear-gradient(90deg, #6594D0 0%, #071C36 100%)";
     const [date, setDate] = React.useState<Date>()
     const [phone, setPhone] = React.useState<PhoneValue>({
         code: "EG",
@@ -29,7 +29,7 @@ const RequestDemo = ({ isHome = false }: Props) => {
         <Dialog>
       <DialogTrigger>
         <button
-          className={`px-4 py-3 rounded-2xl text-lg font-semibold transition-all duration-300 ${
+          className={`md:w-46.75 h-14 w-[300px] rounded-4xl text-lg font-semibold transition-all duration-300 ${
             isHome ? "bg-[#FEFEFE33] text-white" : "text-white shadow-lg"
           }`}
           style={!isHome ? { background: gradient } : undefined}

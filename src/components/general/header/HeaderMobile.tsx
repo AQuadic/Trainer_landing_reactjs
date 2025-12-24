@@ -237,8 +237,8 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
                   </ul>
                 </nav>
 
-                <div className="p-6 border-t space-y-4 bg-gray-50">
-                  <div className="flex justify-center">
+                <div className="p-2 space-y-4">
+                  <div className="flex justify-center border border-[#072E60] rounded-4xl p-3">
                     <ChangeLanguage isHome={false} />
                   </div>
                   <RequestDemo isHome={false} />
