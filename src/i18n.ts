@@ -32,6 +32,9 @@ import seemoreAr from "./locales/ar/seemore/seemore.json";
 import businesstypeEn from "./locales/en/business/businesstype.json";
 import businesstypeAr from "./locales/ar/business/businesstype.json";
 
+import managementeEn from "./locales/en/features/Management.json";
+import managementeAr from "./locales/ar/features/Management.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -48,6 +51,7 @@ i18n
         pricing: pricingEn,
         seemore: seemoreEn,
         businesstype: businesstypeEn,
+        management: managementeEn,
       },
       ar: {
         hero: heroAr,
@@ -60,6 +64,7 @@ i18n
         pricing: pricingAr,
         seemore: seemoreAr,
         businesstype: businesstypeAr,
+        management: managementeAr,
       },
     },
     fallbackLng: "en",
