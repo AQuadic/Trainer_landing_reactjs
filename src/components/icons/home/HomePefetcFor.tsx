@@ -58,7 +58,7 @@ const HomePefetcFor = () => {
                     return (
                         <div key={index}>
                             <img src={item.image} className='md:w-70.5 w-40 md:h-75.5 h-43.25 object-cover rounded-4xl'/>
-                            <div className='relative w-full h-14 bg-[#FFFFFF80] rounded-br-4xl rounded-bl-4xl -mt-14 z-99 flex items-center justify-center'>
+                            <div className='relative w-full h-14 bg-[#FFFFFF80] rounded-br-4xl rounded-bl-4xl -mt-14 z-10 flex items-center justify-center'>
                                 <p className='text-[#FEFEFE] md:text-xl text-sm font-semibold'>{item.text}</p>
                             </div>
                         </div>
