@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Analytics from "../icons/home/Analytics";
 import Bookings from "../icons/home/Bookings";
 import Gateways from "../icons/home/Gateways";
@@ -8,9 +7,13 @@ import Scheduling from "../icons/home/Scheduling";
 import YourOwnApp from "../icons/home/YourOwnApp";
 import { useTranslation } from "react-i18next";
 
-const HomeFeatures = () => {
+interface Props {
+  selected: number;
+  onSelect: (index: number) => void;
+}
+
+const HomeFeatures = ({ selected, onSelect }: Props) => {
   const { t } = useTranslation("homefeatures");
-  const [selected, setSelected] = useState<number | null>(null);
 
   const FeaturesData = [
     { icon: Management, text: t('management') },
@@ -24,22 +27,6 @@ const HomeFeatures = () => {
 
   return (
     <section className="container py-17">
-      <h2 className="md:block hidden text-[#001B3F] text-[32px] font-semibold leading-[100%] text-center">
-        {t('features_title')}
-      </h2>
-
-      <h2 className="md:hidden block text-[#001B3F] text-base font-semibold leading-[150%] text-center">
-        {t('mob_features_title')}
-      </h2>
-
-      <p className="md:block hidden text-[#565555] text-2xl font-medium mt-6 leading-[150%] text-center">
-        {t('features_subtitle')}
-      </p>
-
-      <p className="md:hidden block text-[#565555] text-xs font-medium mt-3 leading-[150%] text-center">
-        {t('mob_features_subtitle')}
-      </p>
-
       <div className="md:mt-14.5 mt-4 flex flex-wrap items-center justify-center gap-4">
         {FeaturesData.map((item, index) => {
           const isActive = selected === index;
@@ -47,7 +34,7 @@ const HomeFeatures = () => {
           return (
             <div
               key={index}
-              onClick={() => setSelected(index)}
+              onClick={() => onSelect(index)}
               className={`cursor-pointer rounded-[22px] p-0.75 transition-all
                     ${
                       isActive

@@ -1,5 +1,24 @@
 {
-    "membership_title": "Full Control of Your Members",
-    "membership_description": "Easily manage memberships, track clients, organize every detail professionally, and ensure smooth communication, seamless scheduling, and a better experience for your members—all from one powerful platform.",
+    "management_title": "Full Control of Your Business",
+    "management_description": "Manage your members, staff, and daily operations with ease. Keep everything organized, automated, and under control from one powerful platform.",
+
+    "scheduling_title": "Smart Scheduling Made Simple",
+    "scheduling_description": "Create, manage, and optimize schedules effortlessly. Avoid conflicts, save time, and ensure smooth daily operations for your business.",
+
+    "bookings_title": "Effortless Bookings Management",
+    "bookings_description": "Allow clients to book sessions easily while you track, manage, and confirm bookings in real time with zero hassle.",
+
+    "payments_title": "Secure Online Payments",
+    "payments_description": "Accept online payments securely, manage subscriptions, and track transactions effortlessly with trusted payment solutions.",
+
+    "analytics_title": "Powerful Insights & Analytics",
+    "analytics_description": "Make smarter decisions using real-time data, performance reports, and insights that help you grow and optimize your business.",
+
+    "app_title": "Your Own Branded App",
+    "app_description": "Give your clients a seamless experience with your own branded mobile app for bookings, payments, and communication.",
+
+    "gateways_title": "Multiple Payment Gateways",
+    "gateways_description": "Connect with multiple payment gateways to offer flexible, fast, and reliable payment options for your customers.",
+
     "see_more": "See More"
 }
