@@ -70,37 +70,37 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
 
   const businessTypeSubmenu = [
     {
-      path: "/business-type/crossfit",
+      path: "/business-type",
       icon: <Crossfit />,
       labelKey: t("crossfit"),
     },
-    { path: "/business-type/gym", icon: <Gym />, labelKey: t("gym") },
+    { path: "/business-type", icon: <Gym />, labelKey: t("gym") },
     {
-      path: "/business-type/fitness-training",
+      path: "/business-type",
       icon: <FitnessTraining />,
       labelKey: t("fitness_training"),
     },
     {
-      path: "/business-type/martial-arts",
+      path: "/business-type",
       icon: <MartialArts />,
       labelKey: t("martial_arts"),
     },
     {
-      path: "/business-type/sports-academies",
+      path: "/business-type",
       icon: <SportsAcademies />,
       labelKey: t("sports_academies"),
     },
     {
-      path: "/business-type/sports-federations",
+      path: "/business-type",
       icon: <SportsFederations />,
       labelKey: t("sports_federations"),
     },
     {
-      path: "/business-type/equestrian-clubs",
+      path: "/business-type",
       icon: <EquestrianClubs />,
       labelKey: t("equestrian_clubs"),
     },
-    { path: "/business-type/yoga", icon: <Yoga />, labelKey: t("yoga") },
+    { path: "/business-type", icon: <Yoga />, labelKey: t("yoga") },
   ];
 
   return (
@@ -136,14 +136,14 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
             if (link.path === "/features/management") {
               return (
                 <div key={link.path} className="relative group">
-                  <Link
-                    to={link.path}
+                  <button
+                    type="button"
                     className={`mx-4 transition-colors duration-300 ease-in-out ${
                       isHomeInTop90 ? "text-white" : "text-foreground"
                     }`}
                   >
                     {label}
-                  </Link>
+                  </button>
                   <div className="absolute ltr:left-0 rtl:-right-14 top-full mt-2 w-48 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {featuresSubmenu.map((item) => (
                       <Link
@@ -152,11 +152,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
                         className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 first:rounded-t-4xl last:rounded-b-4xl transition-colors"
                       >
                         {item.icon}
-                        <span>
-                          {i18n.language === "ar"
-                            ? item.labelKey /* add Arabic keys in i18n */
-                            : item.labelKey}
-                        </span>
+                        <span>{item.labelKey}</span>
                       </Link>
                     ))}
                   </div>
@@ -167,15 +163,15 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
             if (link.path === "/business-type") {
               return (
                 <div key={link.path} className="relative group">
-                  <Link
-                    to={link.path}
+                  <button
+                    type="button"
                     className={`mx-4 transition-colors duration-300 ease-in-out ${
                       isHomeInTop90 ? "text-white" : "text-foreground"
                     }`}
                   >
                     {label}
-                  </Link>
-                  <div className="absolute ltr:left-0 rtl:-right-14  top-full mt-2 w-56 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  </button>
+                  <div className="absolute ltr:left-0 rtl:-right-14 top-full mt-2 w-56 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     {businessTypeSubmenu.map((item) => (
                       <Link
                         key={item.path}
@@ -184,9 +180,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
                       >
                         <span className="shrink-0">{item.icon}</span>
                         <span className="text-sm font-medium text-foreground">
-                          {i18n.language === "ar"
-                            ? item.labelKey /* Arabic label */
-                            : item.labelKey}
+                          {item.labelKey}
                         </span>
                       </Link>
                     ))}
