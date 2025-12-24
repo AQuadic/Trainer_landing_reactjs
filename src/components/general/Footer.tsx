@@ -7,11 +7,9 @@ import { useEffect, useState } from "react";
 import Email from "../icons/general/Email";
 import Phone from "../icons/general/Phone";
 import { useTranslation } from "react-i18next";
-import { useMetaStore, type MetaState } from "@/store/useMetaStore";
 
 const Footer = () => {
   const { t, i18n } = useTranslation("hero");
-  const meta = useMetaStore((state: MetaState) => state.meta);
   const { pathname } = useLocation();
   const [isHomeInTop90, setIsHomeInTop90] = useState(false);
 
@@ -47,7 +45,7 @@ const Footer = () => {
       <div className="md:my-14.25 my-8 grid md:grid-cols-4 justify-between">
         <div className="">
           <img
-            src={meta?.academy.logo.url || "/footerLogo.svg"}
+            src="/footerLogo.svg"
             alt="footer logo"
             className="mx-auto md:mx-0"
           />

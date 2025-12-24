@@ -20,7 +20,6 @@ import SportsFederations from "@/components/icons/general/SportsFederations";
 import EquestrianClubs from "@/components/icons/general/EquestrianClubs";
 import Yoga from "@/components/icons/general/Yoga";
 import { useTranslation } from "react-i18next";
-import { useMetaStore, type MetaState } from "@/store/useMetaStore";
 
 interface HeaderDesktopProps {
   isHomeInTop90: boolean;
@@ -28,7 +27,6 @@ interface HeaderDesktopProps {
 
 const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
   const { t, i18n } = useTranslation("hero");
-  const meta = useMetaStore((state: MetaState) => state.meta);
 
   const featuresSubmenu = [
     {
@@ -113,14 +111,14 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
         <Link to="/" aria-label="Home" className="relative inline-block">
           <span className="relative block w-37.5 h-10">
             <img
-              src={meta?.academy.logo.url || "/logo_white.svg"}
+              src="/logo_white.svg"
               alt="Logo white"
               className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
-              src={meta?.academy.logo.url || "/footerLogo.svg"}
+              src="/footerLogo.svg"
               alt="Logo blue"
               className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-0" : "opacity-100"

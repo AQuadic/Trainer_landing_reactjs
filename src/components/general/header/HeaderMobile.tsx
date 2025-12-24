@@ -16,7 +16,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronDown } from "lucide-react";
 import Menu from "@/components/icons/general/Menu";
 import { useTranslation } from "react-i18next";
-import { useMetaStore, type MetaState } from "@/store/useMetaStore";
 import Crossfit from "@/components/icons/general/Crossfit";
 import Gym from "@/components/icons/general/Gym";
 import FitnessTraining from "@/components/icons/general/FitnessTraining";
@@ -32,7 +31,6 @@ interface HeaderMobileProps {
 
 const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
   const { t, i18n } = useTranslation("hero");
-  const meta = useMetaStore((state: MetaState) => state.meta);
   const { pathname } = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFeaturesOpen, setIsFeaturesOpen] = useState(false);
@@ -134,14 +132,14 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
         <Link to="/" aria-label="Home" className="relative inline-block">
           <span className="relative block w-37.5 h-10">
             <img
-              src={meta?.academy.logo.url || "/logo_white.svg"}
+              src="/logo_white.svg"
               alt="Logo white"
               className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
-              src={meta?.academy.logo.url || "/logo_white.svg"}
+              src="/logo_white.svg"
               alt="Logo blue"
               className={`absolute top-2 inset-0 w-15.25 h-6.75 object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-0" : "opacity-100"
