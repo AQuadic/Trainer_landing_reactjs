@@ -23,12 +23,13 @@ const KitStep = () => {
     <section className="max-w-310  mx-auto flex items-start gap-10 max-lg:flex-col">
       <div className="w-full max-lg:mx-auto max-w-163 flex-1">
         <div className="grid w-full items-center gap-4">
-          <Label htmlFor="name">Name on Kit ( Enter Only 9 Characters )</Label>
+          <Label htmlFor="name" className='text-[#FFFFFF] text-base font-bold'>Name on Kit ( Enter Only 9 Characters )</Label>
           <Input
             type="text"
             id="name"
             name="name"
             placeholder="Enter Your Name"
+            className='h-12 bg-white'
             value={values.name}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setFieldValue("name", e.target.value)
@@ -42,12 +43,13 @@ const KitStep = () => {
         </div>
 
         <div className="grid w-full items-center gap-4 mt-6">
-          <Label htmlFor="number">Kit Number ( Enter Only 2 Numbers )</Label>
+          <Label htmlFor="number" className='text-[#FFFFFF] text-base font-bold'>Kit Number ( Enter Only 2 Numbers )</Label>
           <Input
             type="number"
             id="number"
             name="number"
             placeholder="Enter Your Number"
+            className='h-12 bg-white'
             value={values.number}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               const val = e.target.value;
@@ -65,12 +67,12 @@ const KitStep = () => {
         </div>
 
         <div className="grid w-full items-center gap-4 mt-6">
-          <Label htmlFor="kit_size">Kit Size</Label>
+          <Label htmlFor="kit_size" className='text-[#FFFFFF] text-base font-bold'>Kit Size</Label>
           <Select
             value={values.kit_size}
             onValueChange={(val) => setFieldValue("kit_size", val)}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full h-12! bg-white">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
@@ -89,14 +91,14 @@ const KitStep = () => {
         </div>
 
         <div className="grid w-full items-center gap-4 mt-6">
-          <Label htmlFor="tshirt_size">
+          <Label htmlFor="tshirt_size" className='text-[#FFFFFF] text-base font-bold'>
             {academyName} Out Wear T-shirt Size
           </Label>
           <Select
             value={values.tshirt_size}
             onValueChange={(val) => setFieldValue("tshirt_size", val)}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full h-12! bg-white">
               <SelectValue placeholder="Select Size" />
             </SelectTrigger>
             <SelectContent>
@@ -115,12 +117,12 @@ const KitStep = () => {
         </div>
 
         <div className="grid w-full items-center gap-4 mt-6">
-          <Label htmlFor="hoodie_size">Hoodie Size</Label>
+          <Label htmlFor="hoodie_size" className='text-[#FFFFFF] text-base font-bold'>Hoodie Size</Label>
           <Select
             value={values.hoodie_size}
             onValueChange={(val) => setFieldValue("hoodie_size", val)}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full h-12! bg-white">
               <SelectValue placeholder="Select Size" />
             </SelectTrigger>
             <SelectContent>
@@ -139,12 +141,12 @@ const KitStep = () => {
         </div>
 
         <div className="grid w-full items-center gap-4 mt-6">
-          <Label htmlFor="received">Kit to be Received by</Label>
+          <Label htmlFor="received" className='text-[#FFFFFF] text-base font-bold'>Kit to be Received by</Label>
           <Select
             value={values.received ? "true" : "false"}
             onValueChange={(val) => setFieldValue("received", val === "true")}
           >
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full h-12! bg-white">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>

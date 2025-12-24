@@ -18,12 +18,13 @@ const AboutStep = () => {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="grid w-full items-center gap-4">
-        <Label htmlFor="full_name">Full Name (Required)</Label>
+        <Label htmlFor="full_name" className='text-[#FFFFFF] text-base font-bold'>Full Name (Required)</Label>
         <Input
           type="text"
           id="full_name"
           name="full_name"
           placeholder="Enter Full Name"
+          className='h-12 bg-white'
           value={values.full_name}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setFieldValue("full_name", e.target.value)
@@ -38,12 +39,13 @@ const AboutStep = () => {
       </div>
 
       <div className="grid w-full items-center gap-4 mt-6">
-        <Label htmlFor="birthdate">Date of Birth (Required)</Label>
+        <Label htmlFor="birthdate" className='text-[#FFFFFF] text-base font-bold'>Date of Birth (Required)</Label>
         <Input
           type="date"
           id="birthdate"
           name="birthdate"
           placeholder="YYYY-MM-DD"
+          className='h-12 bg-white'
           value={values.birthdate}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setFieldValue("birthdate", e.target.value)
@@ -58,12 +60,12 @@ const AboutStep = () => {
       </div>
 
       <div className="grid w-full items-center gap-4 mt-6">
-        <Label htmlFor="is_player">Request Type</Label>
+        <Label htmlFor="is_player" className='text-[#FFFFFF] text-base font-bold'>Request Type</Label>
         <Select
           value={values.is_player ? "true" : "false"}
           onValueChange={(val) => setFieldValue("is_player", val === "true")}
         >
-          <SelectTrigger className="w-full">
+          <SelectTrigger className="w-full h-12! bg-white">
             <SelectValue placeholder="Select" />
           </SelectTrigger>
           <SelectContent>
@@ -74,12 +76,12 @@ const AboutStep = () => {
       </div>
 
       <div className="grid w-full items-center gap-4 mt-6">
-        <Label htmlFor="team_id">Team</Label>
+        <Label htmlFor="team_id" className='text-[#FFFFFF] text-base font-bold'>Team</Label>
         <Select
           value={values.team_id?.toString()}
           onValueChange={(val) => setFieldValue("team_id", Number(val))}
         >
-          <SelectTrigger className="w-full">
+          <SelectTrigger className="w-full h-12! bg-white">
             <SelectValue
               placeholder={isLoading ? "Loading teams..." : "Select a Team"}
             />
