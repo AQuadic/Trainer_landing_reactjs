@@ -6,13 +6,14 @@ const ParentsStep = () => {
   return (
     <div>
       <div className="grid w-full items-center gap-4">
-        <Label htmlFor="fatherName">Father's Name</Label>
+        <Label htmlFor="fatherName" className='text-[#FFFFFF] text-base font-bold'>Father's Name</Label>
         <Field
           as={Input}
           type="text"
           id="fatherName"
           name="fatherName"
           placeholder="Enter Your Father's Name"
+          className='h-12 bg-white'
         />
         <ErrorMessage
           name="fatherName"
@@ -22,13 +23,14 @@ const ParentsStep = () => {
       </div>
 
       <div className="grid w-full items-center gap-4 mt-6">
-        <Label htmlFor="fatherMobile">Father's Mobile</Label>
+        <Label htmlFor="fatherMobile" className='text-[#FFFFFF] text-base font-bold'>Father's Mobile</Label>
         <Field
           as={Input}
           type="tel"
           id="fatherMobile"
           name="fatherMobile"
           placeholder="Enter Your Father's Mobile"
+          className='h-12 bg-white'
         />
         <ErrorMessage
           name="fatherMobile"
@@ -38,13 +40,14 @@ const ParentsStep = () => {
       </div>
 
       <div className="grid w-full items-center gap-4 mt-6">
-        <Label htmlFor="motherName">Mother's Name</Label>
+        <Label htmlFor="motherName" className='text-[#FFFFFF] text-base font-bold'>Mother's Name</Label>
         <Field
           as={Input}
           type="text"
           id="motherName"
           name="motherName"
           placeholder="Enter Your Mother's Name"
+          className='h-12 bg-white'
         />
         <ErrorMessage
           name="motherName"
@@ -54,13 +57,14 @@ const ParentsStep = () => {
       </div>
 
       <div className="grid w-full items-center gap-4 mt-6">
-        <Label htmlFor="motherMobile">Mother's Mobile</Label>
+        <Label htmlFor="motherMobile" className='text-[#FFFFFF] text-base font-bold'>Mother's Mobile</Label>
         <Field
           as={Input}
           type="tel"
           id="motherMobile"
           name="motherMobile"
           placeholder="Enter Your Mother's Mobile"
+          className='h-12 bg-white'
         />
         <ErrorMessage
           name="motherMobile"
