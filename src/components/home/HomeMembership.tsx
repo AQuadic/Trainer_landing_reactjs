@@ -42,8 +42,8 @@ const HomeMembership = ({ selectedFeature }: Props) => {
 
     return (
         <section className="bg-[#F3F7FC] md:py-19 py-8">
-            <div className="container flex lg:flex-row flex-col items-center">
-                <div>
+            <div className="container flex lg:flex-row flex-col items-center justify-between">
+                <div className="lg:w-1/2">
                     <h2 className="text-[#001B3F] md:text-[32px] text-xl font-semibold">
                         {current.title}
                     </h2>
@@ -55,13 +55,11 @@ const HomeMembership = ({ selectedFeature }: Props) => {
                         {t('see_more')}
                     </button>
                 </div>
-                <div className="w-full">
                     <img
                         src="/images/blog/membership_img.png"
                         alt="membership image"
                         className="md:w-123.75 h-107.5"
                     />
-                </div>
             </div>
         </section>
     )
