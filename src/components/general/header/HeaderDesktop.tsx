@@ -89,7 +89,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
                 >
                   {label}
                 </Link>
-                <div className="absolute left-0 top-full mt-2 w-48 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="absolute ltr:left-0 rtl:-right-14 top-full mt-2 w-48 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   {featuresSubmenu.map((item) => (
                     <Link
                       key={item.path}
@@ -116,7 +116,7 @@ const HeaderDesktop = ({ isHomeInTop90 }: HeaderDesktopProps) => {
                 >
                   {label}
                 </Link>
-                <div className="absolute left-0 top-full mt-2 w-56 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="absolute ltr:left-0 rtl:-right-14  top-full mt-2 w-56 rounded-4xl bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   {businessTypeSubmenu.map((item) => (
                     <Link
                       key={item.path}
