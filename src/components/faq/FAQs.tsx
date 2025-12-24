@@ -19,7 +19,7 @@ const FAQs = () => {
   const [openItem, setOpenItem] = useState<string | undefined>(undefined);
 
   return (
-    <section className="container md:pt-32 pt-16 pb-17">
+    <section className="container md:pt-32 pt-20 pb-17">
         <Link to='/' className="md:hidden flex items-center gap-13.25 mb-6">
           <BackArrow />
           <p className="text-[#0F0F0F] text-xl font-semibold">{t("mobileBack")}</p>
