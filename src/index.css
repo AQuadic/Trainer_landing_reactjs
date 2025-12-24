@@ -163,3 +163,12 @@ button {
 .writing-mode-horizontal {
   writing-mode: horizontal-tb;
 }
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(to right, #6594d0, #072e60);
+  z-index: 0;
+}

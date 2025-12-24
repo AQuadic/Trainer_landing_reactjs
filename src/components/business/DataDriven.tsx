@@ -11,12 +11,9 @@ const DataDriven = () => {
                 <p className="md:w-132.5 text-[#565555] md:text-lg text-sm font-medium leading-[150%] md:mt-6 mt-3 text-center md:text-start">
                     {t("dataDrivenDescription")}
                 </p>
-                <div className="rounded-4xl">
+                <div className="relative mt-6 w-full rounded-4xl p-[1.5px] gradient-border">
                     <button
-                        className="w-full h-14 mt-6 rounded-4xl border-2 text-[#15509C] text-lg font-semibold"
-                        style={{
-                            borderImage: "linear-gradient(to right, #6594D0, #072E60) 1",
-                        }}
+                        className="relative z-10 w-full h-14 rounded-4xl bg-white text-[#15509C] text-lg font-semibold"
                         >
                         {t("requestDemo")}
                     </button>
