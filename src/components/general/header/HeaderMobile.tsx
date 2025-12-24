@@ -87,7 +87,7 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
               }`}
             />
             <img
-              src="/footerLogo.svg"
+              src="/logo_white.svg"
               alt="Logo blue"
               className={`absolute top-2 inset-0 w-15.25 h-6.75 object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-0" : "opacity-100"
