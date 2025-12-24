@@ -35,6 +35,9 @@ import businesstypeAr from "./locales/ar/business/businesstype.json";
 import managementeEn from "./locales/en/features/Management.json";
 import managementeAr from "./locales/ar/features/Management.json";
 
+import ownappEn from "./locales/en/features/ownapp.json";
+import ownappAr from "./locales/ar/features/ownapp.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -52,6 +55,7 @@ i18n
         seemore: seemoreEn,
         businesstype: businesstypeEn,
         management: managementeEn,
+        ownapp: ownappEn,
       },
       ar: {
         hero: heroAr,
@@ -65,6 +69,7 @@ i18n
         seemore: seemoreAr,
         businesstype: businesstypeAr,
         management: managementeAr,
+        ownapp: ownappAr,
       },
     },
     fallbackLng: "en",
