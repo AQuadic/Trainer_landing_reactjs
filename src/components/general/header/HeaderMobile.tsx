@@ -132,14 +132,14 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
         <Link to="/" aria-label="Home" className="relative inline-block">
           <span className="relative block w-37.5 h-10">
             <img
-              src="/logo_white.svg"
+              src="/new_logo.png"
               alt="Logo white"
               className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-100" : "opacity-0"
               }`}
             />
             <img
-              src="/logo_white.svg"
+              src="/new_logo.png"
               alt="Logo blue"
               className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-350 ease-in-out ${
                 isHomeInTop90 ? "opacity-0" : "opacity-100"
@@ -180,7 +180,11 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
             >
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-6 border-b">
-                  <img src="/footerLogo.svg" alt="Logo" className="h-8 object-contain" />
+                  <img
+                    src="/new_logo.png"
+                    alt="Logo"
+                    className="h-8 object-contain"
+                  />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -195,12 +199,19 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
                     {NavLinks.map((link) => {
                       if (link.nameEn === "Features") {
                         return (
-                          <li key={link.path} className="border border-[#C8C8C8] rounded-4xl">
+                          <li
+                            key={link.path}
+                            className="border border-[#C8C8C8] rounded-4xl"
+                          >
                             <button
                               onClick={() => setIsFeaturesOpen(!isFeaturesOpen)}
                               className="flex items-center justify-between w-full px-4 py-2 text-foreground font-medium hover:bg-gray-100 rounded-lg transition-colors"
                             >
-                              <span>{i18n.language === "ar" ? link.nameAr : link.nameEn}</span>
+                              <span>
+                                {i18n.language === "ar"
+                                  ? link.nameAr
+                                  : link.nameEn}
+                              </span>
                               <ChevronDown
                                 size={20}
                                 className={`transition-transform duration-200 ${
@@ -239,12 +250,21 @@ const HeaderMobile = ({ isHomeInTop90 }: HeaderMobileProps) => {
 
                       if (link.nameEn === "Business Type") {
                         return (
-                          <li key={link.path} className="border border-[#C8C8C8] rounded-4xl">
+                          <li
+                            key={link.path}
+                            className="border border-[#C8C8C8] rounded-4xl"
+                          >
                             <button
-                              onClick={() => setIsBusinessTypeOpen(!isBusinessTypeOpen)}
+                              onClick={() =>
+                                setIsBusinessTypeOpen(!isBusinessTypeOpen)
+                              }
                               className="flex items-center justify-between w-full px-4 py-2 text-foreground font-medium hover:bg-gray-100 rounded-lg transition-colors"
                             >
-                              <span>{i18n.language === "ar" ? link.nameAr : link.nameEn}</span>
+                              <span>
+                                {i18n.language === "ar"
+                                  ? link.nameAr
+                                  : link.nameEn}
+                              </span>
                               <ChevronDown
                                 size={20}
                                 className={`transition-transform duration-200 ${
